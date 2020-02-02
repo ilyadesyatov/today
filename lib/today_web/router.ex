@@ -30,11 +30,15 @@ defmodule TodayWeb.Router do
 
     get "/login", SessionController, :new
     post "/login", SessionController, :login
+
     get "/logout", SessionController, :logout
+
+    get "/registration", RegistrationController, :new
+    post "/registration", RegistrationController, :register
   end
 
   scope "/", TodayWeb do
-    pipe_through [:browser, :auth, :ensure_auth]
+    pipe_through [:browser, :auth]
 
     get "/protected", PageController, :protected
   end
@@ -43,6 +47,4 @@ defmodule TodayWeb.Router do
   # scope "/api", TodayWeb do
   #   pipe_through :api
   # end
-
-
 end

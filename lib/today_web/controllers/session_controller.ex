@@ -1,5 +1,6 @@
 defmodule TodayWeb.SessionController do
   use TodayWeb, :controller
+  import IEx
 
   alias Today.{UserManager, UserManager.User, UserManager.Guardian}
 
@@ -20,16 +21,16 @@ defmodule TodayWeb.SessionController do
 
   def logout(conn, _) do
     conn
-    |> Guardian.Plug.sign_out() #This module's full name is Auth.UserManager.Guardian.Plug,
-    |> redirect(to: "/login")   #and the arguments specfied in the Guardian.Plug.sign_out()
-  end                           #docs are not applicable here
+    |> Guardian.Plug.sign_out()
+    |> redirect(to: "/login")
+  end
 
   defp login_reply({:ok, user}, conn) do
     conn
     |> put_flash(:info, "Welcome back!")
-    |> Guardian.Plug.sign_in(user)   #This module's full name is Auth.UserManager.Guardian.Plug,
-    |> redirect(to: "/protected")    #and the arguments specified in the Guardian.Plug.sign_in()
-  end                                #docs are not applicable here.
+    |> Guardian.Plug.sign_in(user)
+    |> redirect(to: "/protected")
+  end
 
   defp login_reply({:error, reason}, conn) do
     conn
