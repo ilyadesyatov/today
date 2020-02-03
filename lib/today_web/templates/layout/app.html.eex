@@ -12,7 +12,7 @@
       <section class="container">
         <nav role="navigation">
           <ul>
-            <li><span><%=  %></span></li>
+            <li><p>Login? <%= logged_in?(@conn) %></p></li>
           </ul>
         </nav>
       </section>

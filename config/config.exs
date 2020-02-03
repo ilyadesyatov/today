@@ -25,7 +25,7 @@ config :logger, :console,
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 
-config :today, Today.Guardian,
+config :today, Today.UserManager.Guardian,
        issuer: "today",
        secret_key: "1Ev9uEisbb9UEyS5WPtG6DXE4Xd2QnRroq26LPx1FVHsLn6PQFNTTp5mkbkaG2EJ"
 

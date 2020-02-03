@@ -39,7 +39,7 @@ defmodule TodayWeb do
       # Use all HTML functionality (forms, tags, etc)
       use Phoenix.HTML
 
-      import TodayWeb.ErrorHelpers
+      import TodayWeb.{ErrorHelpers, SessionHelpers}
       import TodayWeb.Gettext
       alias TodayWeb.Router.Helpers, as: Routes
     end

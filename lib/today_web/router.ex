@@ -38,7 +38,7 @@ defmodule TodayWeb.Router do
   end
 
   scope "/", TodayWeb do
-    pipe_through [:browser, :auth]
+    pipe_through [:browser, :auth, :ensure_auth]
 
     get "/protected", PageController, :protected
   end
