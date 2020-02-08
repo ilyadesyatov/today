@@ -7,6 +7,7 @@ defmodule Today.UserManager.User do
   schema "users" do
     field :password, :string
     field :username, :string
+    has_many :posts, Today.Content.Post, foreign_key: :user_id
 
     timestamps()
   end

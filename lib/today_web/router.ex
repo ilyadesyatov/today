@@ -35,12 +35,14 @@ defmodule TodayWeb.Router do
 
     get "/registration", RegistrationController, :new
     post "/registration", RegistrationController, :register
+
   end
 
   scope "/", TodayWeb do
     pipe_through [:browser, :auth, :ensure_auth]
 
     get "/protected", PageController, :protected
+    resources "/posts", PostController
   end
 
   # Other scopes may use custom stacks.
