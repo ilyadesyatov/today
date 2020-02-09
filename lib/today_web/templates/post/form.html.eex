@@ -1,19 +1,26 @@
-<%= form_for @changeset, @action, fn f -> %>
-  <%= if @changeset.action do %>
-    <div class="alert alert-danger">
-      <p>Oops, something went wrong! Please check the errors below.</p>
-    </div>
-  <% end %>
+<link href="//cdn.jsdelivr.net/simplemde/latest/simplemde.min.css" rel="stylesheet">
+<script src="//cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
 
-  <%= label f, :title %>
-  <%= text_input f, :title %>
-  <%= error_tag f, :title %>
+<br>
+<%= form_for @changeset, @action, [as: :post, multipart: true], fn f-> %>
 
-  <%= label f, :body %>
-  <%= textarea f, :body %>
-  <%= error_tag f, :body %>
-
-  <div>
-    <%= submit "Save" %>
+  <div class="form-group">
+    <%= text_input f, :title, placeholder: "Title", class: "form-control" %>
+    <span class="text-danger"><%= error_tag f, :title %></span>
   </div>
+
+  <div class="form-group">
+    <%= textarea f, :body, rows: 12, placeholder: "Content", class: "form-control " %>
+    <span class="text-danger"><%= error_tag f, :body %></span>
+  </div>
+
+  <%= submit "Save", [class: "btn btn-primary"] %>
+
+  <%= link "Back", to: Routes.post_path(@conn, :index), class: "btn btn-secondary" %>
+
 <% end %>
+<br>
+
+<script>
+  var simplemde = new SimpleMDE();
+</script>

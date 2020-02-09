@@ -20,7 +20,7 @@ defmodule Today.MixProject do
   def application do
     [
       mod: {Today.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :timex]
     ]
   end
 
@@ -45,6 +45,8 @@ defmodule Today.MixProject do
       {:plug_cowboy, "~> 2.0"},
       {:guardian, "~> 2.0"},
       {:argon2_elixir, "~> 2.0"},
+      { :earmark, "~> 1.4.3" },
+      {:timex, "~> 3.6.1"}
     ]
   end
 

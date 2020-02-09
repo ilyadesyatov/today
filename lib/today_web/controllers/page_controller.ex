@@ -1,8 +1,10 @@
 defmodule TodayWeb.PageController do
   use TodayWeb, :controller
+  alias Today.Content
 
   def index(conn, _params) do
-    render(conn, "index.html")
+    posts = Content.list_posts()
+    render(conn, "index.html", posts: posts)
   end
 
   def protected(conn, _) do
