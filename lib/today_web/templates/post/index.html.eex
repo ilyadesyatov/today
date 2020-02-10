@@ -1,13 +1,8 @@
-<div class="container mt-3 mb-5">
+<div class="mb-5 mt-3">
     <div class="row">
       <div class="col-md-12">
-        <h1>
-          Index Posts
-        </h1>
         <%= for post <- @posts do %>
             <div class="card mb-4">
-              <h2 class="card-title card-header"><%= post.title %></h2>
-              <img class="card-img" src="http://placehold.it/1200x300">
               <div class="card-body">
                 <p class="card-text"><%= string_to_html(post.body) %></p>
               </div>
@@ -29,16 +24,7 @@
               </div>
             </div>
         <% end %>
-        <!-- Pagination -->
-        <ul class="pagination justify-content-center">
-          <li class="page-item">
-            <a class="page-link" href="#">&larr; Older</a>
-          </li>
-          <li class="page-item disabled">
-            <a class="page-link" href="#">Newer &rarr;</a>
-          </li>
-        </ul>
-        </div>
+      </div>
     </div>
 </div>
 

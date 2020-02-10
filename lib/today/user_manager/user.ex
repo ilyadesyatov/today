@@ -7,6 +7,7 @@ defmodule Today.UserManager.User do
   schema "users" do
     field :password, :string
     field :username, :string
+    field :email, :string
     has_many :posts, Today.Content.Post, foreign_key: :user_id
 
     timestamps()
@@ -15,9 +16,10 @@ defmodule Today.UserManager.User do
   @doc false
   def changeset(user, attrs) do
     user
-    |> cast(attrs, [:username, :password])
-    |> validate_required([:username, :password])
+    |> cast(attrs, [:username, :password, :email])
+    |> validate_required([:username, :password, :email])
     |> unique_constraint(:username)
+    |> unique_constraint(:email)
     |> put_password_hash()
   end
 

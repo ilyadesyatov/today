@@ -22,6 +22,22 @@ defmodule Today.Content do
   end
 
   @doc """
+  Returns the list of posts.
+
+  ## Examples
+
+      iex> list_posts()
+      [%Post{}, ...]
+
+  """
+  def user_list_posts(user) do
+    from(p in Post, where: p.user_id == ^user.id)
+    |> Repo.all
+    |> Repo.preload([:user])
+  end
+
+
+  @doc """
   Gets a single post.
 
   Raises `Ecto.NoResultsError` if the Post does not exist.

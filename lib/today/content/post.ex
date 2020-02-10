@@ -4,7 +4,6 @@ defmodule Today.Content.Post do
 
   schema "posts" do
     field :body, :string
-    field :title, :string
     belongs_to :user, Today.UserManager.User
 
     timestamps()
@@ -13,8 +12,7 @@ defmodule Today.Content.Post do
   @doc false
   def changeset(post, attrs) do
     post
-    |> cast(attrs, [:title, :body])
-    |> validate_required([:title, :body])
-    |> unique_constraint(:title)
+    |> cast(attrs, [:body])
+    |> validate_required([:body])
   end
 end
