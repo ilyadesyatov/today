@@ -1,0 +1,24 @@
+<div class="card mb-4">
+  <div class="card-body">
+    <p class="card-text"><%= string_to_html(@post.body) %></p>
+  </div>
+  <div class="card-footer text-muted">
+    <div class="row">
+        <div class="col-lg-5 col-sm-12">
+            <span>
+                Posted on <%= posted_datetime(@post.inserted_at) %> by <%= @post.user.username %>
+            </span>
+        </div>
+        <div class="col-lg-2 col-sm-12">
+             <b class="text-success">#<%= @post.tag.name %></b>
+        </div>
+        <div class="col-lg-5 col-sm-12">
+            <div class="btn-group pull-right btn-group-sm" role="group">
+               <%= link "Show", to: Routes.post_path(@conn, :show, @post), class: "btn btn-primary" %>
+               <%= link "Edit", to: Routes.post_path(@conn, :edit, @post), class: "btn btn-warning" %>
+               <%= link "Delete", to: Routes.post_path(@conn, :delete, @post), class: "btn btn-danger", method: :delete, data: [confirm: "Are you sure?"] %>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>

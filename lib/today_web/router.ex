@@ -28,6 +28,7 @@ defmodule TodayWeb.Router do
 
     get "/protected", PageController, :protected
     resources "/posts", PostController, except: [:show]
+    resources "/tags", TagController
   end
 
   scope "/", TodayWeb do
@@ -45,10 +46,4 @@ defmodule TodayWeb.Router do
     resources "/posts", PostController, only: [:show]
   end
 
-
-
-  # Other scopes may use custom stacks.
-  # scope "/api", TodayWeb do
-  #   pipe_through :api
-  # end
 end

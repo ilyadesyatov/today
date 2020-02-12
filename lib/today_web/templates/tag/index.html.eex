@@ -1,0 +1,27 @@
+<div class="mb-5 mt-3">
+   <%= render "form.html", Map.put(assigns, :action, Routes.tag_path(@conn, :create)) %>
+    <div class="row">
+      <div class="col-md-12">
+        <ul class="list-group">
+            <%= for tag <- @tags do %>
+              <li class="list-group-item">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-12">
+                        <span>
+                            <%= tag.name %>
+                        </span>
+                    </div>
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="btn-group pull-right btn-group-sm" role="group">
+                           <%= link "Show", to: Routes.tag_path(@conn, :show, tag), class: "btn btn-primary" %>
+                           <%= link "Edit", to: Routes.tag_path(@conn, :edit, tag), class: "btn btn-warning" %>
+                           <%= link "Delete", to: Routes.tag_path(@conn, :delete, tag), class: "btn btn-danger", method: :delete, data: [confirm: "Are you sure?"] %>
+                        </div>
+                    </div>
+                </div>
+              </li>
+            <% end %>
+        </ul>
+      </div>
+    </div>
+</div>

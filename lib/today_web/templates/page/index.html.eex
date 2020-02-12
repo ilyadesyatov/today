@@ -1,31 +1,7 @@
 <div class="mb-5 mt-3">
     <div class="row">
       <div class="col-md-12">
-        <%= for post <- @posts do %>
-            <div class="card mb-4">
-              <div class="card-body">
-                <p class="card-text"><%= string_to_html(post.body) %></p>
-              </div>
-              <div class="card-footer text-muted">
-                <div class="row">
-                    <div class="col-lg-6 col-sm-12">
-                        <span>
-                            Posted on <%= posted_datetime(post.inserted_at) %> by <%= post.user.username %>
-                        </span>
-                    </div>
-                    <div class="col-lg-6 col-sm-12">
-                        <div class="btn-group pull-right btn-group-sm" role="group">
-                           <%= link "Show", to: Routes.post_path(@conn, :show, post), class: "btn btn-primary" %>
-                           <%= if current_user?(@conn, post.user) do %>
-                             <%= link "Edit", to: Routes.post_path(@conn, :edit, post), class: "btn btn-warning" %>
-                             <%= link "Delete", to: Routes.post_path(@conn, :delete, post), class: "btn btn-danger", method: :delete, data: [confirm: "Are you sure?"] %>
-                           <% end %>
-                        </div>
-                    </div>
-                </div>
-              </div>
-            </div>
-        <% end %>
+        <%= render_many @posts, TodayWeb.PostView, "_post.html", conn: @conn %>
       </div>
     </div>
 </div>

@@ -14,7 +14,8 @@ defmodule TodayWeb.PostController do
 
   def new(conn, _params) do
     changeset = Content.change_post(%Post{})
-    render(conn, "new.html", changeset: changeset)
+    tags = Content.list_tags
+    render(conn, "new.html", tags: tags, changeset: changeset)
   end
 
   def create(conn, %{"post" => post_params}) do
@@ -37,8 +38,9 @@ defmodule TodayWeb.PostController do
 
   def edit(conn, %{"id" => id}) do
     post = Content.get_post!(id)
+    tags = Content.list_tags
     changeset = Content.change_post(post)
-    render(conn, "edit.html", post: post, changeset: changeset)
+    render(conn, "edit.html", tags: tags, post: post, changeset: changeset)
   end
 
   def update(conn, %{"id" => id, "post" => post_params}) do
