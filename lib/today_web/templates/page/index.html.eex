@@ -1,7 +1,7 @@
 <div class="mb-5 mt-3">
     <div class="row">
       <div class="col-md-12">
-        <%= render_many @posts, TodayWeb.PostView, "_post.html", conn: @conn %>
+        <%= render_many @posts, TodayWeb.PageView, "_post.html", as: :post, conn: @conn %>
       </div>
     </div>
 </div>

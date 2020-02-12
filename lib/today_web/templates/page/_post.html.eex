@@ -7,13 +7,13 @@
         <div class="col-lg-5 col-sm-12">
             <span>
                 Posted on
-                <%= link (posted_datetime(@post.inserted_at)), to: Routes.post_path(@conn, :index, date: posted_date(@post.inserted_at)), class: "text-muted font-weight-bold" %>
+                <%= link (posted_datetime(@post.inserted_at)), to: Routes.page_path(@conn, :index, date: posted_date(@post.inserted_at)), class: "text-muted font-weight-bold" %>
                 by
-                <%= link @post.user.username, to: Routes.post_path(@conn, :index, user: @post.user.username), class: "text-primary font-weight-bold" %>
+                <%= link @post.user.username, to: Routes.page_path(@conn, :index, user: @post.user.username), class: "text-primary font-weight-bold" %>
             </span>
         </div>
         <div class="col-lg-2 col-sm-12">
-            <%= link "##{@post.tag.name}", to: Routes.post_path(@conn, :index, tag: @post.tag.name), class: "text-success font-weight-bold" %>
+            <%= link "##{@post.tag.name}", to: Routes.page_path(@conn, :index, tag: @post.tag.name), class: "text-success font-weight-bold" %>
         </div>
         <div class="col-lg-5 col-sm-12">
             <div class="btn-group pull-right btn-group-sm" role="group">

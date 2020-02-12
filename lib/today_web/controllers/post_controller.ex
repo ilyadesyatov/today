@@ -6,9 +6,9 @@ defmodule TodayWeb.PostController do
   alias Today.{UserManager, UserManager.User, UserManager.Guardian, Content}
   alias Today.Content.Post
 
-  def index(conn, _params) do
+  def index(conn, params) do
     current_user = Guardian.Plug.current_resource(conn)
-    posts = Content.user_list_posts(current_user)
+    posts = Content.user_list_posts(current_user, Map.new(params, fn {k, v} -> {String.to_atom(k), v} end))
     render(conn, "index.html", posts: posts)
   end
 
