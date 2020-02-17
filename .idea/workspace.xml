@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15ce2cd5-129e-4627-b6d8-ea53e3360034" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/today_web/templates/page/_post.html.eex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/today/content.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/today/content.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/today_web/controllers/page_controller.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/today_web/controllers/page_controller.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/today_web/controllers/post_controller.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/today_web/controllers/post_controller.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/today_web/templates/page/index.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/today_web/templates/page/index.html.eex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/today_web/templates/post/_post.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/today_web/templates/post/_post.html.eex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/today_web/views/custom_helpers.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/today_web/views/custom_helpers.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/today_web/templates/layout/_header.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/today_web/templates/layout/_header.html.eex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/today_web/templates/post/form.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/today_web/templates/post/form.html.eex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/today_web/templates/post/show.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/today_web/templates/post/show.html.eex" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/_build/dev/lib/connection/" />
     <ignored path="$PROJECT_DIR$/_build/dev/lib/cowboy/" />
@@ -106,20 +102,20 @@
           <entry key="project.closed" value="6" />
           <entry key="project.open.time.1" value="4" />
           <entry key="project.open.time.2" value="2" />
-          <entry key="project.open.time.3" value="2" />
+          <entry key="project.open.time.3" value="3" />
           <entry key="project.open.time.4" value="3" />
           <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="12" />
+          <entry key="project.opened" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="beam" value="1" />
           <entry key="css" value="7" />
-          <entry key="eex" value="76" />
+          <entry key="eex" value="81" />
           <entry key="ex" value="140" />
           <entry key="exs" value="21" />
-          <entry key="gitignore" value="3" />
+          <entry key="gitignore" value="4" />
           <entry key="js" value="2" />
           <entry key="lock" value="2" />
           <entry key="md" value="3" />
@@ -136,12 +132,12 @@
           <entry key="BEAM" value="1" />
           <entry key="CSS" value="7" />
           <entry key="Database Element" value="14" />
-          <entry key="EEx" value="76" />
+          <entry key="EEx" value="81" />
           <entry key="Elixir Script" value="21" />
           <entry key="Elixir file" value="140" />
           <entry key="JavaScript" value="2" />
           <entry key="Markdown" value="3" />
-          <entry key="PLAIN_TEXT" value="5" />
+          <entry key="PLAIN_TEXT" value="6" />
           <entry key="RNG Compact" value="1" />
           <entry key="Scratch" value="1" />
           <entry key="XML" value="2" />
@@ -150,7 +146,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="62" />
-          <entry key="eex" value="2056" />
+          <entry key="eex" value="2073" />
           <entry key="ex" value="1916" />
           <entry key="exs" value="50" />
           <entry key="gitignore" value="1" />
@@ -160,7 +156,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="62" />
-          <entry key="EEx" value="2056" />
+          <entry key="EEx" value="2073" />
           <entry key="Elixir Script" value="50" />
           <entry key="Elixir file" value="1916" />
           <entry key="JavaScript" value="19" />
@@ -172,20 +168,50 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/today_web/templates/post/index.html.eex">
+        <entry file="file://$PROJECT_DIR$/lib/today_web/templates/layout/app.html.eex">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
+            <state relative-caret-position="220">
+              <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/today_web/templates/layout/_header.html.eex">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="140">
+              <caret line="7" column="39" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/today_web/templates/post/edit.html.eex">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/today_web/templates/post/form.html.eex">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="246">
+              <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/today_web/templates/post/show.html.eex">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="10" column="48" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/lib/today/content.ex">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="54" column="8" selection-start-line="54" selection-start-column="8" selection-end-line="54" selection-end-column="8" />
-            </state>
+            <state relative-caret-position="-375" />
           </provider>
         </entry>
       </file>
@@ -210,8 +236,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/today_web/templates/page/_post.html.eex">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="16" column="14" lean-forward="true" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+            <state relative-caret-position="320">
+              <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -221,42 +247,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
               <caret line="3" column="30" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/today_web/views/page_view.ex">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="10" selection-start-column="10" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/today_web/views/post_view.ex">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="10" selection-start-column="10" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/deps/phoenix_html/lib/phoenix_html/engine.ex">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="159">
-              <caret line="132" selection-start-line="132" selection-end-line="132" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/today_web/views/custom_helpers.ex">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -338,13 +328,11 @@
         <option value="$PROJECT_DIR$/mix.exs" />
         <option value="$PROJECT_DIR$/lib/today_web/views/session_helpers.ex" />
         <option value="$PROJECT_DIR$/lib/today_web/views/layout_view.ex" />
-        <option value="$PROJECT_DIR$/lib/today_web/templates/layout/_header.html.eex" />
         <option value="$PROJECT_DIR$/priv/repo/migrations/20200202120159_create_users.exs" />
         <option value="$PROJECT_DIR$/lib/today/user_manager/user.ex" />
         <option value="$PROJECT_DIR$/lib/today_web/templates/post/new.html.eex" />
         <option value="$PROJECT_DIR$/lib/today_web/templates/post/edit.html.eex" />
         <option value="$PROJECT_DIR$/lib/today_web/templates/layout/app.html.eex" />
-        <option value="$PROJECT_DIR$/lib/today_web/templates/post/show.html.eex" />
         <option value="$PROJECT_DIR$/assets/css/post.css" />
         <option value="$PROJECT_DIR$/priv/repo/migrations/20200210194849_create_tags.exs" />
         <option value="$PROJECT_DIR$/priv/repo/migrations/20200208112253_create_posts.exs" />
@@ -353,7 +341,6 @@
         <option value="$PROJECT_DIR$/lib/today_web/router.ex" />
         <option value="$PROJECT_DIR$/lib/today/content/tag.ex" />
         <option value="$PROJECT_DIR$/lib/today/content/post.ex" />
-        <option value="$PROJECT_DIR$/lib/today_web/templates/post/form.html.eex" />
         <option value="$PROJECT_DIR$/lib/today_web/templates/post/post.html.eex" />
         <option value="$PROJECT_DIR$/lib/today_web/templates/post/index.html.eex" />
         <option value="$PROJECT_DIR$/lib/today_web/templates/tag/new.html.eex" />
@@ -370,6 +357,9 @@
         <option value="$PROJECT_DIR$/lib/today_web/templates/page/index.html.eex" />
         <option value="$PROJECT_DIR$/lib/today_web/templates/page/_post.html.eex" />
         <option value="$PROJECT_DIR$/lib/today/content.ex" />
+        <option value="$PROJECT_DIR$/lib/today_web/templates/layout/_header.html.eex" />
+        <option value="$PROJECT_DIR$/lib/today_web/templates/post/form.html.eex" />
+        <option value="$PROJECT_DIR$/lib/today_web/templates/post/show.html.eex" />
       </list>
     </option>
   </component>
@@ -406,90 +396,6 @@
             <path>
               <item name="today" type="b2602c69:ProjectViewProjectNode" />
               <item name="today" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="today" type="b2602c69:ProjectViewProjectNode" />
-              <item name="today" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="today" type="b2602c69:ProjectViewProjectNode" />
-              <item name="today" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="today" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="today" type="b2602c69:ProjectViewProjectNode" />
-              <item name="today" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="today" type="462c0819:PsiDirectoryNode" />
-              <item name="content" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="today" type="b2602c69:ProjectViewProjectNode" />
-              <item name="today" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="today" type="462c0819:PsiDirectoryNode" />
-              <item name="user_manager" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="today" type="b2602c69:ProjectViewProjectNode" />
-              <item name="today" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="today_web" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="today" type="b2602c69:ProjectViewProjectNode" />
-              <item name="today" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="today_web" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="today" type="b2602c69:ProjectViewProjectNode" />
-              <item name="today" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="today_web" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="today" type="b2602c69:ProjectViewProjectNode" />
-              <item name="today" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="today_web" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="layout" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="today" type="b2602c69:ProjectViewProjectNode" />
-              <item name="today" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="today_web" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="page" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="today" type="b2602c69:ProjectViewProjectNode" />
-              <item name="today" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="today_web" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="post" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="today" type="b2602c69:ProjectViewProjectNode" />
-              <item name="today" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="today_web" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="tag" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="today" type="b2602c69:ProjectViewProjectNode" />
-              <item name="today" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="today_web" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -558,23 +464,23 @@
       <workItem from="1581240110183" duration="473000" />
       <workItem from="1581257146203" duration="18928000" />
       <workItem from="1581356434432" duration="13956000" />
-      <workItem from="1581532722112" duration="13139000" />
+      <workItem from="1581532722112" duration="13831000" />
+      <workItem from="1581972235473" duration="710000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81037000" />
+    <option name="totallyTimeSpent" value="82439000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1987" y="25" width="1853" height="1055" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16989486" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17155506" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32937366" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.26406926" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.26406926" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -582,7 +488,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.3538961" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.35281384" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Database Console" order="12" weight="0.32900432" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -598,24 +504,10 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/deps/ecto/lib/ecto/repo/queryable.ex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="410" selection-start-line="410" selection-end-line="410" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/deps/phoenix/lib/phoenix/template.ex">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="159">
           <caret line="340" selection-start-line="340" selection-end-line="340" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/today_web/templates/layout/_header.html.eex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="12" selection-start-line="12" selection-end-line="15" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -728,9 +620,6 @@
     <entry file="file://$PROJECT_DIR$/lib/today_web/views/tag_view.ex">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/today_web/templates/post/edit.html.eex">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/today/content/tag.ex">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="40">
@@ -748,24 +637,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/today_web/templates/layout/app.html.eex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/today_web/controllers/tag_controller.ex">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
           <caret line="22" column="52" selection-start-line="22" selection-start-column="52" selection-end-line="22" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/today_web/templates/post/show.html.eex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="7" column="37" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -794,13 +669,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
           <caret line="11" column="80" selection-start-line="11" selection-start-column="80" selection-end-line="11" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/today_web/templates/post/form.html.eex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="26" column="18" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="66" />
         </state>
       </provider>
     </entry>
@@ -887,6 +755,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lib/today/content.ex">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1080">
+          <caret line="54" column="8" selection-start-line="54" selection-start-column="8" selection-end-line="54" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/today_web/templates/layout/app.html.eex">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/today_web/templates/layout/_header.html.eex">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="7" column="39" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/today_web/templates/post/edit.html.eex">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/today_web/controllers/page_controller.ex">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="6" column="36" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lib/today_web/templates/post/_post.html.eex">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -894,10 +793,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/today_web/controllers/page_controller.ex">
+    <entry file="file://$PROJECT_DIR$/lib/today_web/templates/page/_post.html.eex">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" column="36" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
+        <state relative-caret-position="320">
+          <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -908,18 +807,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/today_web/templates/page/_post.html.eex">
+    <entry file="file://$PROJECT_DIR$/lib/today_web/templates/post/form.html.eex">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="16" column="14" lean-forward="true" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+        <state relative-caret-position="246">
+          <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/today/content.ex">
+    <entry file="file://$PROJECT_DIR$/lib/today_web/templates/post/show.html.eex">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="54" column="8" selection-start-line="54" selection-start-column="8" selection-end-line="54" selection-end-column="8" />
+        <state relative-caret-position="200">
+          <caret line="10" column="48" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-375" />
       </provider>
     </entry>
   </component>

@@ -14,7 +14,7 @@
                             <%= select(f, :tag_id, Enum.map(@tags, &{&1.name, &1.id}), class: "form-control") %>
                         </div>
                         <div class="col-lg-3">
-                            <%= link "New Tag", to: Routes.tag_path(@conn, :new), class: "btn btn-success", target: "_blank" %>
+                            <%= link "New Tag", to: Routes.tag_path(@conn, :index), class: "btn btn-success", target: "_blank" %>
                         </div>
                     </div>
                   </div>

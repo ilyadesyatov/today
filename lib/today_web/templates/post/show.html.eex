@@ -8,7 +8,7 @@
             <div class="card-footer">
               <p class="pull-right">Posted on <%= posted_datetime(@post.inserted_at) %> by <%= @post.user.username %></p>
               <div class="btn-group mb-4" role="group">
-                <%= link "Back", to: Routes.post_path(@conn, :index), class: "btn btn-secondary" %>
+                <%= link "Back", to: Routes.page_path(@conn, :index), class: "btn btn-secondary" %>
                 <%= if current_user?(@conn, @post.user) do %>
                   <%= link "Edit", to: Routes.post_path(@conn, :edit, @post), class: "btn btn-warning" %>
                   <%= link "Delete", to: Routes.post_path(@conn, :delete, @post), class: "btn btn-danger", method: :delete, data: [confirm: "Are you sure?"] %>

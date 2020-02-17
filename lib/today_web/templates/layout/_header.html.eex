@@ -6,10 +6,10 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <%= link "My Posts", to: Routes.post_path(@conn, :index), class: css_class(@conn, Routes.post_path(@conn, :index), "nav-link") %>
-          </li>
           <%= if logged_in?(@conn) do %>
+            <li class="nav-item">
+              <%= link "My Posts", to: Routes.post_path(@conn, :index), class: css_class(@conn, Routes.post_path(@conn, :index), "nav-link") %>
+            </li>
             <li class="nav-item">
               <%= link "New Post", to: Routes.post_path(@conn, :new), class: css_class(@conn, Routes.post_path(@conn, :new), "nav-link") %>
             </li>
