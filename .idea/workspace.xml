@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15ce2cd5-129e-4627-b6d8-ea53e3360034" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elixir_buildpack.config" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/today_web/templates/layout/_header.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/today_web/templates/layout/_header.html.eex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/today_web/templates/post/form.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/today_web/templates/post/form.html.eex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/today_web/templates/post/show.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/today_web/templates/post/show.html.eex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/prod.secret.exs" beforeDir="false" afterPath="$PROJECT_DIR$/config/prod.secret.exs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/today_web/endpoint.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/today_web/endpoint.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projectFilesBackup/.idea/today.iml" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/_build/dev/lib/connection/" />
     <ignored path="$PROJECT_DIR$/_build/dev/lib/cowboy/" />
@@ -62,36 +64,6 @@
         <item name="today_dev@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
       </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="today_dev@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="today_dev: database" type="6d9b600a:PostgresImplModel$Database" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="today_dev@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="today_dev: database" type="6d9b600a:PostgresImplModel$Database" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="today_dev@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="today_dev: database" type="6d9b600a:PostgresImplModel$Database" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="public: schema" type="a16502c0:PostgresImplModel$Schema" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="today_dev@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="today_dev: database" type="6d9b600a:PostgresImplModel$Database" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="public: schema" type="a16502c0:PostgresImplModel$Schema" />
-        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
     </expand>
     <select />
   </component>
@@ -110,12 +82,15 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="Procfile" value="1" />
           <entry key="beam" value="1" />
+          <entry key="config" value="2" />
           <entry key="css" value="7" />
           <entry key="eex" value="81" />
-          <entry key="ex" value="140" />
-          <entry key="exs" value="21" />
-          <entry key="gitignore" value="4" />
+          <entry key="ex" value="141" />
+          <entry key="exs" value="22" />
+          <entry key="gitignore" value="5" />
+          <entry key="iml" value="1" />
           <entry key="js" value="2" />
           <entry key="lock" value="2" />
           <entry key="md" value="3" />
@@ -133,11 +108,12 @@
           <entry key="CSS" value="7" />
           <entry key="Database Element" value="14" />
           <entry key="EEx" value="81" />
-          <entry key="Elixir Script" value="21" />
-          <entry key="Elixir file" value="140" />
+          <entry key="Elixir Script" value="22" />
+          <entry key="Elixir file" value="141" />
+          <entry key="IDEA_MODULE" value="1" />
           <entry key="JavaScript" value="2" />
           <entry key="Markdown" value="3" />
-          <entry key="PLAIN_TEXT" value="6" />
+          <entry key="PLAIN_TEXT" value="10" />
           <entry key="RNG Compact" value="1" />
           <entry key="Scratch" value="1" />
           <entry key="XML" value="2" />
@@ -145,11 +121,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+          <entry key="config" value="1" />
           <entry key="css" value="62" />
           <entry key="eex" value="2073" />
           <entry key="ex" value="1916" />
-          <entry key="exs" value="50" />
-          <entry key="gitignore" value="1" />
+          <entry key="exs" value="53" />
+          <entry key="gitignore" value="11" />
           <entry key="js" value="19" />
         </counts>
       </usages-collector>
@@ -157,10 +134,10 @@
         <counts>
           <entry key="CSS" value="62" />
           <entry key="EEx" value="2073" />
-          <entry key="Elixir Script" value="50" />
+          <entry key="Elixir Script" value="53" />
           <entry key="Elixir file" value="1916" />
           <entry key="JavaScript" value="19" />
-          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="PLAIN_TEXT" value="12" />
         </counts>
       </usages-collector>
     </session>
@@ -168,85 +145,74 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/today_web/templates/layout/app.html.eex">
+        <entry file="file://$PROJECT_DIR$/lib/today_web/router.ex">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="48" />
+            <state relative-caret-position="540">
+              <caret line="27" selection-start-line="27" selection-end-line="27" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/today_web/templates/layout/_header.html.eex">
+        <entry file="file://$PROJECT_DIR$/config/prod.secret.exs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="7" column="39" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/today_web/templates/post/edit.html.eex">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/today_web/templates/post/form.html.eex">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/today_web/templates/post/show.html.eex">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="10" column="48" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
+            <state relative-caret-position="280">
+              <caret line="14" column="2" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/elixir_buildpack.config">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="100">
+              <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/today_web.ex">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/today_web/endpoint.ex">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="80">
+              <caret line="4" column="14" lean-forward="true" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Procfile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="19" selection-start-column="19" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-375" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/today_web/controllers/page_controller.ex">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="6" column="36" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
+            <state relative-caret-position="507">
+              <caret line="40" column="9" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/today_web/templates/post/_post.html.eex">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="6" column="40" selection-end-line="28" selection-end-column="6" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/config/prod.exs">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/today_web/templates/page/_post.html.eex">
+        <entry file="file://$PROJECT_DIR$/lib/today_web/controllers/session_controller.ex">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/today_web/templates/page/index.html.eex">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="3" column="30" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
+            <state relative-caret-position="380">
+              <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -309,10 +275,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/lib/today/user_manager/error_handler.ex" />
-        <option value="$PROJECT_DIR$/lib/today_web/views/session_view.ex" />
-        <option value="$PROJECT_DIR$/lib/today_web/views/registration_view.ex" />
-        <option value="$PROJECT_DIR$/lib/today_web/controllers/registration_controller.ex" />
         <option value="$PROJECT_DIR$/lib/today/user_manager/guardian.ex" />
         <option value="$PROJECT_DIR$/config/config.exs" />
         <option value="$PROJECT_DIR$/lib/today/guardian.ex" />
@@ -322,7 +284,6 @@
         <option value="$PROJECT_DIR$/assets/js/app.js" />
         <option value="$PROJECT_DIR$/assets/css/phoenix.css" />
         <option value="$PROJECT_DIR$/lib/today_web/controllers/session_controller.ex" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/lib/today_web.ex" />
         <option value="$PROJECT_DIR$/assets/css/app.css" />
         <option value="$PROJECT_DIR$/mix.exs" />
@@ -360,6 +321,11 @@
         <option value="$PROJECT_DIR$/lib/today_web/templates/layout/_header.html.eex" />
         <option value="$PROJECT_DIR$/lib/today_web/templates/post/form.html.eex" />
         <option value="$PROJECT_DIR$/lib/today_web/templates/post/show.html.eex" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/config/prod.secret.exs" />
+        <option value="$PROJECT_DIR$/lib/today_web/endpoint.ex" />
+        <option value="$PROJECT_DIR$/Procfile" />
+        <option value="$PROJECT_DIR$/elixir_buildpack.config" />
       </list>
     </option>
   </component>
@@ -396,6 +362,22 @@
             <path>
               <item name="today" type="b2602c69:ProjectViewProjectNode" />
               <item name="today" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="today" type="b2602c69:ProjectViewProjectNode" />
+              <item name="today" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="today" type="b2602c69:ProjectViewProjectNode" />
+              <item name="today" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="today" type="b2602c69:ProjectViewProjectNode" />
+              <item name="today" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="today_web" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -470,12 +452,12 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82439000" />
+    <option name="totallyTimeSpent" value="83043000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1987" y="25" width="1853" height="1055" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17155506" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.30879912" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -488,7 +470,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.35281384" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.35281384" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Database Console" order="12" weight="0.32900432" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -504,79 +486,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/deps/phoenix/lib/phoenix/template.ex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="340" selection-start-line="340" selection-end-line="340" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/today_web/views/layout_view.ex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/deps/phoenix_html/lib/phoenix_html/form.ex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="605" column="17" selection-start-line="605" selection-start-column="6" selection-end-line="605" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/today_web/endpoint.ex">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/today_web/controllers/registration_controller.ex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/today_web/controllers/session_controller.ex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/deps/phoenix/lib/phoenix/router.ex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="322" column="48" selection-start-line="322" selection-start-column="48" selection-end-line="322" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/deps/ecto/lib/ecto/changeset.ex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="2559" selection-start-line="2559" selection-end-line="2559" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/post.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/priv/repo/migrations/20200202120159_create_users.exs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="11" column="44" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/priv/repo/migrations/20200207194849_create_tags.exs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="1" column="20" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/priv/repo/migrations/20200208112253_create_posts.exs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -609,8 +518,8 @@
     <entry file="file://$PROJECT_DIR$/priv/repo/migrations/20200210202933_create_tags.exs" />
     <entry file="file://$PROJECT_DIR$/lib/today_web/router.ex">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="30" column="36" lean-forward="true" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
+        <state relative-caret-position="540">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
         </state>
       </provider>
     </entry>
@@ -823,7 +732,70 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-375" />
+        <state relative-caret-position="507">
+          <caret line="40" column="9" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/prod.exs">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projectFilesBackup/.idea/today.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/prod.secret.exs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="14" column="2" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/today_web.ex">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/today_web/endpoint.ex">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="4" column="14" lean-forward="true" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/today_web/controllers/registration_controller.ex">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/today/user_manager.ex">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2080">
+          <caret line="104" column="6" selection-start-line="104" selection-start-column="6" selection-end-line="104" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phoenix_static_buildpack.config">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Procfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="19" selection-start-column="19" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elixir_buildpack.config">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+        </state>
       </provider>
     </entry>
   </component>
