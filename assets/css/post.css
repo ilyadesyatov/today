@@ -2,3 +2,7 @@ body {
   padding-top: 56px;
   background-color: #6c757d;
 }
+
+main.container {
+  margin-bottom: 20px;
+}
