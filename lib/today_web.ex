@@ -24,6 +24,7 @@ defmodule TodayWeb do
       import Plug.Conn
       import TodayWeb.Gettext
       alias TodayWeb.Router.Helpers, as: Routes
+      import Phoenix.LiveView.Controller
     end
   end
 
@@ -42,6 +43,7 @@ defmodule TodayWeb do
       import TodayWeb.{ErrorHelpers, SessionHelpers, CustomHelpers}
       import TodayWeb.Gettext
       alias TodayWeb.Router.Helpers, as: Routes
+      import Phoenix.LiveView.Helpers
     end
   end
 
@@ -50,6 +52,7 @@ defmodule TodayWeb do
       use Phoenix.Router
       import Plug.Conn
       import Phoenix.Controller
+      import Phoenix.LiveView.Router
     end
   end
 
