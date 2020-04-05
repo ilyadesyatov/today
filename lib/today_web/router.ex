@@ -1,6 +1,6 @@
 defmodule TodayWeb.Router do
-  import Phoenix.LiveView.Router
   use TodayWeb, :router
+  import Phoenix.LiveView.Router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -8,6 +8,7 @@ defmodule TodayWeb.Router do
     plug :fetch_live_flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug :put_root_layout, {TodayWeb.LayoutView, :app}
   end
 
   pipeline :api do
@@ -35,8 +36,6 @@ defmodule TodayWeb.Router do
   scope "/", TodayWeb do
     pipe_through [:browser, :auth]
 
-    get "/", PageController, :index
-
     get "/login", SessionController, :new
     post "/login", SessionController, :login
 
@@ -45,6 +44,7 @@ defmodule TodayWeb.Router do
     get "/registration", RegistrationController, :new
     post "/registration", RegistrationController, :register
     resources "/posts", PostController, only: [:show]
+    live "/", PageLive.Index
   end
 
 end

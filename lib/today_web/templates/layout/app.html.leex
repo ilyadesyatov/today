@@ -10,12 +10,12 @@
   </head>
   <body>
     <header>
-        <%= render "_header.html", conn: @conn%>
+        <%= render "_header.html", conn: @conn %>
     </header>
     <main role="main" class="container">
       <p class="alert alert-info d-none" role="alert"><%= get_flash(@conn, :info) %></p>
       <p class="alert alert-danger d-none" role="alert"><%= get_flash(@conn, :error) %></p>
-      <%= render @view_module, @view_template, assigns %>
+      <%= @inner_content %>
     </main>
     <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
   </body>

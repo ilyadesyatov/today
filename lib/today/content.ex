@@ -20,15 +20,27 @@ defmodule Today.Content do
 
   """
   def list_posts(params) do
-    tags = (Map.has_key?(params, :tag) && [Map.get(params, :tag)]) || (from(tag in Tag, select: tag.name) |> Repo.all)
-    users = (Map.has_key?(params, :user) && [Map.get(params, :user)]) || (from(u in User, select: u.username) |> Repo.all)
-    start_at = Map.get(params, :date, "1800-01-01") |> Date.from_iso8601!
-    end_at = Map.get(params, :date, "2200-01-01") |> Date.from_iso8601!
+    mod_params = mod_params(params)
+    tags = (Map.has_key?(mod_params, :tag) && [Map.get(mod_params, :tag)]) || (from(tag in Tag, select: tag.name) |> Repo.all)
+    users = (Map.has_key?(mod_params, :user) && [Map.get(mod_params, :user)]) || (from(u in User, select: u.username) |> Repo.all)
+    start_at = Map.get(mod_params, :date, "1800-01-01") |> Date.from_iso8601!
+    end_at = Map.get(mod_params, :date, "2200-01-01") |> Date.from_iso8601!
     Repo.all(
       from(p in Post,
         join: t in "tags",  on: p.tag_id == t.id,
         join: u in "users", on: p.user_id == u.id,
         where: t.name in ^tags and u.username in ^users and fragment("?::date", p.inserted_at) >= ^start_at and fragment("?::date", p.inserted_at) <= ^end_at,
+        order_by: [desc: p.inserted_at],
+        preload: [:user, :tag]
+      )
+    )
+  end
+
+  def list_posts do
+    Repo.all(
+      from(p in Post,
+        join: t in "tags",  on: p.tag_id == t.id,
+        join: u in "users", on: p.user_id == u.id,
         order_by: [desc: p.inserted_at],
         preload: [:user, :tag]
       )
@@ -251,5 +263,9 @@ defmodule Today.Content do
   """
   def change_tag(%Tag{} = tag) do
     Tag.changeset(tag, %{})
+  end
+
+  defp mod_params(params) do
+    Map.new(params, fn {k, v} -> {String.to_atom(k), v} end)
   end
 end

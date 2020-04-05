@@ -1,0 +1,14 @@
+<div class="mt-3">
+    <div class="search-nav">
+      <%= form_for :select_tag, "#", [phx_change: :select], fn f-> %>
+          <div class="form-group">
+            <%= select(f, :tag, tags_for_select, selected: @selected_tag, prompt: "Choose your tag", class: "form-control") %>
+          </div>
+      <% end %>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <%= render_many @posts, TodayWeb.PageView, "_post.html", as: :post, socket: @socket %>
+      </div>
+    </div>
+</div>
