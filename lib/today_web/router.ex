@@ -45,6 +45,7 @@ defmodule TodayWeb.Router do
     post "/registration", RegistrationController, :register
     resources "/posts", PostController, only: [:show]
     live "/", PageLive.Index
+    get "/", PageController, :index
   end
 
 end
