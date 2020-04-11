@@ -13,7 +13,7 @@
             </span>
         </div>
         <div class="col-lg-2 col-sm-12">
-            <%= link "##{@post.tag.name}", to: "#", phx_click: "search", phx_value_tag: @post.tag.name, class: "text-success font-weight-bold" %>
+            <%= link "##{String.replace(@post.tag.name, "_", " ")}", to: "#", phx_click: "search", phx_value_tag: @post.tag.name, class: "text-success font-weight-bold" %>
         </div>
         <div class="col-lg-5 col-sm-12">
             <div class="btn-group pull-right btn-group-sm" role="group">
