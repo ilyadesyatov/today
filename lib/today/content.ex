@@ -20,11 +20,10 @@ defmodule Today.Content do
 
   """
   def list_posts(params) do
-    mod_params = mod_params(params)
-    tags = (Map.has_key?(mod_params, :tag) && [Map.get(mod_params, :tag)]) || (from(tag in Tag, select: tag.name) |> Repo.all)
-    users = (Map.has_key?(mod_params, :user) && [Map.get(mod_params, :user)]) || (from(u in User, select: u.username) |> Repo.all)
-    start_at = Map.get(mod_params, :date, "1800-01-01") |> Date.from_iso8601!
-    end_at = Map.get(mod_params, :date, "2200-01-01") |> Date.from_iso8601!
+    tags = (Map.has_key?(params, (:tag || "tag")) && [Map.get(params, (:tag || "tag"))]) || (from(tag in Tag, select: tag.name) |> Repo.all)
+    users = (Map.has_key?(params, (:user || "user")) && [Map.get(params, (:user || "user"))]) || (from(u in User, select: u.username) |> Repo.all)
+    start_at = Map.get(params, (:date || "date"), "1800-01-01") |> Date.from_iso8601!
+    end_at = Map.get(params, (:date || "date"), "2200-01-01") |> Date.from_iso8601!
     Repo.all(
       from(p in Post,
         join: t in "tags",  on: p.tag_id == t.id,
@@ -263,9 +262,5 @@ defmodule Today.Content do
   """
   def change_tag(%Tag{} = tag) do
     Tag.changeset(tag, %{})
-  end
-
-  defp mod_params(params) do
-    Map.new(params, fn {k, v} -> {String.to_atom(k), v} end)
   end
 end

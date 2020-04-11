@@ -26,7 +26,7 @@
                 <div class="card-footer">
                   <%= submit "Save", [class: "btn btn-primary"] %>
 
-                  <%= link "Back", to: Routes.post_path(@conn, :index), class: "btn btn-secondary" %>
+                  <%= link "Back", to: Routes.page_index_path(@conn, :index), class: "btn btn-secondary" %>
                 </div>
             <% end %>
         </div>

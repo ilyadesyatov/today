@@ -8,7 +8,7 @@ defmodule TodayWeb.Router do
     plug :fetch_live_flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
-    plug :put_root_layout, {TodayWeb.LayoutView, :app}
+    plug :put_root_layout, {TodayWeb.LayoutView, :root}
   end
 
   pipeline :api do
@@ -29,8 +29,10 @@ defmodule TodayWeb.Router do
     pipe_through [:browser, :auth, :ensure_auth]
 
     get "/protected", PageController, :protected
-    resources "/posts", PostController, except: [:show]
+    resources "/posts", PostController, except: [:show, :index]
     resources "/tags", TagController
+
+    live "/posts", PageLive.Index, :posts
   end
 
   scope "/", TodayWeb do
@@ -38,14 +40,13 @@ defmodule TodayWeb.Router do
 
     get "/login", SessionController, :new
     post "/login", SessionController, :login
-
     get "/logout", SessionController, :logout
 
     get "/registration", RegistrationController, :new
     post "/registration", RegistrationController, :register
-    resources "/posts", PostController, only: [:show]
-    live "/", PageLive.Index
-    get "/", PageController, :index
-  end
 
+    resources "/posts", PostController, only: [:show]
+
+    live "/", PageLive.Index, :index
+  end
 end

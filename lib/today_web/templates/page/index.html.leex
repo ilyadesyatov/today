@@ -1,14 +1,26 @@
 <div class="mt-3">
     <div class="search-nav">
-      <%= form_for :select_tag, "#", [phx_change: :select], fn f-> %>
+      <%= if (Map.has_key?(@selected, :date) && !is_nil(@selected.date)) do %>
+          <%= link to: "#", phx_click: "cancel_date", class: "badge badge-warning" do%>
+            <h5 class="m-0"><%= @selected.date %><span>&times;</span></h5>
+          <% end %>
+      <% end %>
+
+      <%= if (Map.has_key?(@selected, :user) && !is_nil(@selected.user)) do %>
+          <%= link to: "#", phx_click: "cancel_user", class: "badge badge-primary" do %>
+            <h5 class="m-0"><%= @selected.user %><span>&times;</span></h5>
+          <% end %>
+      <% end %>
+
+      <%= form_for :select_tag, "#", [phx_change: :select, class: "mt-2"], fn f-> %>
           <div class="form-group">
-            <%= select(f, :tag, tags_for_select(), selected: @selected_tag, prompt: "Choose your tag", class: "form-control") %>
+            <%= select(f, :tag, tags_for_select(), selected: @selected.tag, prompt: "Choose your tag", class: "form-control") %>
           </div>
       <% end %>
     </div>
     <div class="row">
       <div class="col-md-12">
-        <%= render_many @posts, TodayWeb.PageView, "_post.html", as: :post, socket: @socket %>
+        <%= render_many @posts, TodayWeb.PageView, "_post.html", as: :post, socket: @socket, current_user: @current_user %>
       </div>
     </div>
 </div>

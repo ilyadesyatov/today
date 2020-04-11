@@ -26,3 +26,7 @@ liveSocket.connect()
 //
 // Local files can be imported directly using relative paths, for example:
 // import socket from "./socket"
+
+$(".alert").delay(4000).slideUp(200, function() {
+    $(this).alert('close');
+});

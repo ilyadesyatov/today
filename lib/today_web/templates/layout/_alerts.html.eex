@@ -1,0 +1,8 @@
+<%= Enum.map(get_flash(@conn), fn {flash_key, flash_message} -> %>
+    <div class="alert alert-<%= flash_key %> alert-dismissible fade show mt-3" role="alert">
+      <%= flash_message %>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+<% end) %>

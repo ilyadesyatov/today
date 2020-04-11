@@ -6,15 +6,26 @@
     <div class="row">
         <div class="col-lg-5 col-sm-12">
             <span>
-
+                Posted on
+                <%= link posted_datetime(@post.inserted_at), to: "#", phx_click: "search", phx_value_date: posted_date(@post.inserted_at), class: "text-muted font-weight-bold" %>
+                by
+                <%= link @post.user.username, to: "#", phx_click: "search", phx_value_user: @post.user.username, class: "text-primary font-weight-bold" %>
             </span>
         </div>
         <div class="col-lg-2 col-sm-12">
-            <%= live_patch "##{@post.tag.name}", to: Routes.live_path(@socket, TodayWeb.PageLive.Index, %{tag: @post.tag.name}), class: "text-success font-weight-bold" %>
+            <%= link "##{@post.tag.name}", to: "#", phx_click: "search", phx_value_tag: @post.tag.name, class: "text-success font-weight-bold" %>
         </div>
         <div class="col-lg-5 col-sm-12">
             <div class="btn-group pull-right btn-group-sm" role="group">
-
+                <%= link "Show", to: Routes.post_path(@socket, :show, @post), class: "btn btn-primary" %>
+                <%= if live_current_user?(@current_user, @post.user) do %>
+                   <%= link "Edit", to: Routes.post_path(@socket, :edit, @post), class: "btn btn-warning" %>
+                   <%= link "Delete", to: "#",
+                               phx_click: "delete",
+                               phx_value_id: @post.id,
+                               class: "btn btn-danger",
+                               data: [confirm: "Are you sure?"] %>
+                <% end %>
             </div>
         </div>
     </div>
