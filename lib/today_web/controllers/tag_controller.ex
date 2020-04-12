@@ -17,7 +17,7 @@ defmodule TodayWeb.TagController do
 
   def create(conn, %{"tag" => tag_params}) do
     case Content.create_tag(tag_params) do
-      {:ok, tag} ->
+      {:ok, _tag} ->
         conn
         |> put_flash(:info, "Tag created successfully.")
         |> redirect(to: Routes.tag_path(conn, :index))

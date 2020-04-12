@@ -20,15 +20,27 @@ defmodule Today.Content do
 
   """
   def list_posts(params) do
-    tags = (Map.has_key?(params, (:tag || "tag")) && [Map.get(params, (:tag || "tag"))]) || (from(tag in Tag, select: tag.name) |> Repo.all)
-    users = (Map.has_key?(params, (:user || "user")) && [Map.get(params, (:user || "user"))]) || (from(u in User, select: u.username) |> Repo.all)
-    start_at = Map.get(params, (:date || "date"), "1800-01-01") |> Date.from_iso8601!
-    end_at = Map.get(params, (:date || "date"), "2200-01-01") |> Date.from_iso8601!
+    tags =
+      (Map.has_key?(params, :tag) && [Map.get(params, :tag)]) ||
+        from(tag in Tag, select: tag.name) |> Repo.all()
+
+    users =
+      (Map.has_key?(params, :user) && [Map.get(params, :user)]) ||
+        from(u in User, select: u.username) |> Repo.all()
+
+    start_at = Map.get(params, :date, "1800-01-01") |> Date.from_iso8601!()
+    end_at = Map.get(params, :date, "2200-01-01") |> Date.from_iso8601!()
+
     Repo.all(
       from(p in Post,
-        join: t in "tags",  on: p.tag_id == t.id,
-        join: u in "users", on: p.user_id == u.id,
-        where: t.name in ^tags and u.username in ^users and fragment("?::date", p.inserted_at) >= ^start_at and fragment("?::date", p.inserted_at) <= ^end_at,
+        join: t in "tags",
+        on: p.tag_id == t.id,
+        join: u in "users",
+        on: p.user_id == u.id,
+        where:
+          t.name in ^tags and u.username in ^users and
+            fragment("?::date", p.inserted_at) >= ^start_at and
+            fragment("?::date", p.inserted_at) <= ^end_at,
         order_by: [desc: p.inserted_at],
         preload: [:user, :tag]
       )
@@ -38,8 +50,10 @@ defmodule Today.Content do
   def list_posts do
     Repo.all(
       from(p in Post,
-        join: t in "tags",  on: p.tag_id == t.id,
-        join: u in "users", on: p.user_id == u.id,
+        join: t in "tags",
+        on: p.tag_id == t.id,
+        join: u in "users",
+        on: p.user_id == u.id,
         order_by: [desc: p.inserted_at],
         preload: [:user, :tag]
       )
@@ -56,20 +70,26 @@ defmodule Today.Content do
 
   """
   def user_list_posts(user, params) do
-    tags = (Map.has_key?(params, :tag) && [Map.get(params, :tag)]) || (from(tag in Tag, select: tag.name) |> Repo.all)
-    start_at = Map.get(params, :date, "1800-01-01") |> Date.from_iso8601!
-    end_at = Map.get(params, :date, "2200-01-01") |> Date.from_iso8601!
+    tags =
+      (Map.has_key?(params, :tag) && [Map.get(params, :tag)]) ||
+        from(tag in Tag, select: tag.name) |> Repo.all()
+
+    start_at = Map.get(params, :date, "1800-01-01") |> Date.from_iso8601!()
+    end_at = Map.get(params, :date, "2200-01-01") |> Date.from_iso8601!()
+
     Repo.all(
       from(p in Post,
         join: t in assoc(p, :tag),
         on: p.tag_id == t.id,
-        where: p.user_id == ^user.id and t.name in ^tags and fragment("?::date", p.inserted_at) >= ^start_at and fragment("?::date", p.inserted_at) <= ^end_at,
+        where:
+          p.user_id == ^user.id and t.name in ^tags and
+            fragment("?::date", p.inserted_at) >= ^start_at and
+            fragment("?::date", p.inserted_at) <= ^end_at,
         order_by: [desc: p.inserted_at],
         preload: [:user, :tag]
       )
     )
   end
-
 
   @doc """
   Gets a single post.
@@ -119,8 +139,13 @@ defmodule Today.Content do
   """
   def create_user_post(user, attrs \\ %{}) do
     updated_attrs = Map.merge(attrs, %{"tag_id" => String.to_integer(attrs["tag_id"])})
-    Ecto.build_assoc(user, :posts, Map.new(updated_attrs, fn {k, v} -> {String.to_atom(k), v} end))
-    |> Repo.insert
+
+    Ecto.build_assoc(
+      user,
+      :posts,
+      Map.new(updated_attrs, fn {k, v} -> {String.to_atom(k), v} end)
+    )
+    |> Repo.insert()
   end
 
   @doc """

@@ -1,4 +1,4 @@
-#defmodule Today.Guardian do
+# defmodule Today.Guardian do
 #  use Guardian, otp_app: :today
 #
 #  def subject_for_token(resource, _claims) do
@@ -25,4 +25,4 @@
 #  def resource_from_claims(_claims) do
 #    {:error, :reason_for_error}
 #  end
-#end
+# end

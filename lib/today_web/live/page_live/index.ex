@@ -5,21 +5,23 @@ defmodule TodayWeb.PageLive.Index do
 
   def render(assigns), do: PageView.render("index.html", assigns)
 
-  def mount(conn, session, socket), do: {:ok, assign(socket, current_user: fetch_current_user(session), conn: conn)}
+  def mount(conn, session, socket),
+    do: {:ok, assign(socket, current_user: fetch_current_user(session), conn: conn)}
 
   def handle_params(params, _url, socket) do
     {:noreply,
-      socket
-      |> assign(selected: %{ tag: params["tag"], user: params["user"], date: params["date"] })
-      |> assign_posts()
-    }
+     socket
+     |> assign(selected: %{tag: params["tag"], user: params["user"], date: params["date"]})
+     |> assign_posts()}
   end
 
   def handle_event("select", %{"select_tag" => %{"tag" => tag}}, socket) do
-    prompt_tag = case tag do
-      "" -> nil
-      _  -> tag
-     end
+    prompt_tag =
+      case tag do
+        "" -> nil
+        _ -> tag
+      end
+
     {:noreply, socket |> update_selected(%{tag: prompt_tag}) |> assign_posts()}
   end
 
@@ -45,7 +47,7 @@ defmodule TodayWeb.PageLive.Index do
 
   def handle_event("delete", %{"id" => id}, socket) do
     with post <- Content.get_post!(id),
-        {:ok, _post} <- Content.delete_post(post) do
+         {:ok, _post} <- Content.delete_post(post) do
       {:noreply, socket |> put_flash(:info, "Post was deleted!") |> assign_posts()}
     else
       # :error -> {:noreply, socket |> put_flash(:error, "post was ton deleted!")}
@@ -55,10 +57,10 @@ defmodule TodayWeb.PageLive.Index do
 
   defp fetch_current_user(session) do
     with {:ok, token} <- Map.fetch(session, "guardian_default_token"),
-      {:ok, %Today.UserManager.User{} = user, _} <- Guardian.resource_from_token(token) do
-        user
+         {:ok, %Today.UserManager.User{} = user, _} <- Guardian.resource_from_token(token) do
+      user
     else
-      #:error -> redirect to login path
+      # :error -> redirect to login path
       _ -> nil
     end
   end
@@ -72,10 +74,16 @@ defmodule TodayWeb.PageLive.Index do
   end
 
   defp assign_posts(socket) do
-    query_params = case socket.assigns.live_action do
-      :index -> remove_nil(socket.assigns.selected)
-      :posts -> Map.merge(remove_nil(socket.assigns.selected), %{user: socket.assigns.current_user.username})
-    end
+    query_params =
+      case socket.assigns.live_action do
+        :index ->
+          remove_nil(socket.assigns.selected)
+
+        :posts ->
+          Map.merge(remove_nil(socket.assigns.selected), %{
+            user: socket.assigns.current_user.username
+          })
+      end
 
     assign(socket, posts: Content.list_posts(query_params))
   end

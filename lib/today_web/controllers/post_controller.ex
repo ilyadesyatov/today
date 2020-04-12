@@ -1,19 +1,17 @@
 defmodule TodayWeb.PostController do
   use TodayWeb, :controller
-
-  import Ecto.Changeset
-
-  alias Today.{UserManager, UserManager.User, UserManager.Guardian, Content}
+  alias Today.{UserManager.Guardian, Content}
   alias Today.Content.Post
 
   def new(conn, _params) do
     changeset = Content.change_post(%Post{})
-    tags = Content.list_tags
+    tags = Content.list_tags()
     render(conn, "new.html", tags: tags, changeset: changeset)
   end
 
   def create(conn, %{"post" => post_params}) do
     current_user = Guardian.Plug.current_resource(conn)
+
     case Content.create_user_post(current_user, post_params) do
       {:ok, post} ->
         conn
@@ -32,7 +30,7 @@ defmodule TodayWeb.PostController do
 
   def edit(conn, %{"id" => id}) do
     post = Content.get_post!(id)
-    tags = Content.list_tags
+    tags = Content.list_tags()
     changeset = Content.change_post(post)
     render(conn, "edit.html", tags: tags, post: post, changeset: changeset)
   end

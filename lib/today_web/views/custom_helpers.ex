@@ -4,7 +4,7 @@ defmodule TodayWeb.CustomHelpers do
 
   def string_to_html(text) do
     text
-    |> Earmark.as_html!
+    |> Earmark.as_html!()
     |> raw
   end
 
@@ -14,11 +14,11 @@ defmodule TodayWeb.CustomHelpers do
 
   def posted_date(date_time) do
     date_time
-    |> NaiveDateTime.to_date
-    |> Date.to_string
+    |> NaiveDateTime.to_date()
+    |> Date.to_string()
   end
 
   def tags_for_select do
-    Enum.map(Content.list_tags, &{&1.name, &1.name})
+    Enum.map(Content.list_tags(), &{String.replace(&1.name, "_", " "), &1.name})
   end
 end

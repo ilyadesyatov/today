@@ -1,12 +1,12 @@
 defmodule TodayWeb.SessionController do
   use TodayWeb, :controller
-  import IEx
 
   alias Today.{UserManager, UserManager.User, UserManager.Guardian}
 
   def new(conn, _) do
     changeset = UserManager.change_user(%User{})
     maybe_user = Guardian.Plug.current_resource(conn)
+
     if maybe_user do
       redirect(conn, to: "/protected")
     else
