@@ -1,12 +1,12 @@
 defmodule TodayWeb.SessionController do
   use TodayWeb, :controller
-  import IEx
 
   alias Today.{UserManager, UserManager.User, UserManager.Guardian}
 
   def new(conn, _) do
     changeset = UserManager.change_user(%User{})
     maybe_user = Guardian.Plug.current_resource(conn)
+
     if maybe_user do
       redirect(conn, to: "/protected")
     else
@@ -27,9 +27,9 @@ defmodule TodayWeb.SessionController do
 
   defp login_reply({:ok, user}, conn) do
     conn
-    |> put_flash(:info, "Welcome back!")
+    |> put_flash(:info, "Welcome back #{user.username}!")
     |> Guardian.Plug.sign_in(user)
-    |> redirect(to: "/protected")
+    |> redirect(to: "/")
   end
 
   defp login_reply({:error, reason}, conn) do

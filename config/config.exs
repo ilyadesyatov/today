@@ -15,7 +15,8 @@ config :today, TodayWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "JLJalDeSeQWa/2uyn2UCvz2GE39C69tPIcxBqQ21Jg8+4LI7tROiXLOVfdLicwCS",
   render_errors: [view: TodayWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: Today.PubSub, adapter: Phoenix.PubSub.PG2]
+  pubsub: [name: Today.PubSub, adapter: Phoenix.PubSub.PG2],
+  live_view: [signing_salt: "RJmZYJ2WSm2iiK1TOhqDNWOOp0AE0bRW"]
 
 # Configures Elixir's Logger
 config :logger, :console,

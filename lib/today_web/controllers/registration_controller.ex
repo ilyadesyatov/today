@@ -6,10 +6,14 @@ defmodule TodayWeb.RegistrationController do
   def new(conn, _) do
     changeset = UserManager.change_user(%User{})
     maybe_user = Guardian.Plug.current_resource(conn)
+
     if maybe_user do
       redirect(conn, to: "/protected")
     else
-      render(conn, "new.html", changeset: changeset, action: Routes.registration_path(conn, :register))
+      render(conn, "new.html",
+        changeset: changeset,
+        action: Routes.registration_path(conn, :register)
+      )
     end
   end
 
@@ -18,7 +22,7 @@ defmodule TodayWeb.RegistrationController do
     |> register_reply(conn)
   end
 
-  defp register_reply({:ok, user}, conn) do
+  defp register_reply({:ok, _user}, conn) do
     conn
     |> put_flash(:info, "New User created!")
     |> redirect(to: "/login")
@@ -26,27 +30,17 @@ defmodule TodayWeb.RegistrationController do
 
   defp register_reply({:error, reason}, conn) do
     conn
-    |> put_flash(:error, reason.errors
-                         |> Enum.map(fn {error_name, {error, _}}-> to_string(error_name) <> " " <> error end)
-                         |> Enum.join(", "))
+    |> put_flash(
+      :error,
+      reason.errors
+      |> Enum.map(fn {error_name, {error, _}} -> to_string(error_name) <> " " <> error end)
+      |> Enum.join(", ")
+    )
     |> new(%{})
   end
 end
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-#defmodule TodayWeb.RegistrationController do
+# defmodule TodayWeb.RegistrationController do
 #  use TodayWeb, :controller
 #
 ##  alias TodayWeb.User
@@ -67,4 +61,4 @@ end
 #        |> render(Today.ChangesetView, "error.json", changeset: changeset)
 #    end
 #  end
-#end
+# end

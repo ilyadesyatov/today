@@ -1,0 +1,21 @@
+<div class="mt-3">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+              <%= string_to_html(@post.body) %>
+            </div>
+            <div class="card-footer">
+              <p class="pull-right">Posted on <%= posted_datetime(@post.inserted_at) %> by <%= @post.user.username %></p>
+              <div class="btn-group" role="group">
+                <%= live_patch "Back", to: Routes.page_index_path(@conn, :index), class: "btn btn-secondary" %>
+                <%= if current_user?(@conn, @post.user) do %>
+                  <%= link "Edit", to: Routes.post_path(@conn, :edit, @post), class: "btn btn-warning" %>
+                  <%= link "Delete", to: Routes.post_path(@conn, :delete, @post), class: "btn btn-danger", method: :delete, data: [confirm: "Are you sure?"] %>
+                <% end %>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+</div>

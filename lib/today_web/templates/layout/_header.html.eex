@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <%= live_redirect "Today", to: Routes.page_index_path(@conn, :index), class: "navbar-brand" %>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <%= if logged_in?(@conn) do %>
+            <li class="nav-item">
+              <%= live_redirect "My Posts", to: Routes.page_index_path(@conn, :posts), class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link "New Post", to: Routes.post_path(@conn, :new), class: css_class(@conn, Routes.post_path(@conn, :new), "nav-link") %>
+            </li>
+            <li class="nav-item">
+              <%= link("Logout", to: Routes.session_path(@conn, :logout), class: "nav-link") %>
+            </li>
+          <% else %>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Login
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <%= link("Login", to: Routes.session_path(@conn, :login), class: "dropdown-item") %>
+                <div class="dropdown-divider"></div>
+                <%= link("Sign Up", to: Routes.registration_path(@conn, :new), class: "dropdown-item") %>
+              </div>
+            </li>
+         <% end %>
+        </ul>
+      </div>
+    </div>
+</nav>
