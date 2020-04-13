@@ -285,7 +285,7 @@ defmodule Today.Content do
       %Ecto.Changeset{source: %Tag{}}
 
   """
-  def change_tag(%Tag{} = tag) do
-    Tag.changeset(tag, %{})
+  def change_tag(tag, attrs \\ %{}) do
+    Tag.changeset(tag, attrs)
   end
 end
