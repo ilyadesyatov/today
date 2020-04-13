@@ -12,6 +12,9 @@ defmodule Today.Content.Tag do
   def changeset(tag, attrs) do
     tag
     |> cast(attrs, [:name])
+    |> validate_format(:name, ~r/^[a-z0-9_\.]*$/,
+      message: "only letters, numbers, points, and underscores please!"
+    )
     |> validate_required([:name])
     |> unique_constraint(:name)
   end

@@ -1,5 +1,5 @@
 <div class="mb-5 mt-3">
-   <%= render "form.html", Map.put(assigns, :action, Routes.tag_path(@conn, :create)) %>
+   <%= live_render(@conn, TodayWeb.TagLive.New) %>
     <div class="row">
       <div class="col-md-12">
         <ul class="list-group">

@@ -1,0 +1,34 @@
+<div class="mt-3 mb-3">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+            <%= f = form_for @changeset, "#", [phx_change: :validate, phx_submit: :save] %>
+                <div class="card-body">
+                    <div class="row">
+                      <div class="col-md-3">
+                        <%= text_input f, :name, [phx_debounce: "blur", class: "form-control", placeholder: "New Tag Name"] %>
+                      </div>
+                      <div class="col-md-1">
+                        <%= submit "Save", class: "btn btn-primary" %>
+                      </div>
+                      <%= if @changeset.action do %>
+                          <div class="col-md-7">
+                              <%= if @changeset.valid? do %>
+                                <div class="m-0 alert alert-success">
+                                    <span>this is valid format!</span>
+                                </div>
+                              <% else %>
+                                <div class="m-0 alert alert-danger">
+                                    <%= error_tag f, :name %>
+                                </div>
+                              <% end %>
+                          </div>
+                      <% end %>
+                    </div>
+                </div>
+            </form>
+        </div>
+      </div>
+    </div>
+</div>
+
