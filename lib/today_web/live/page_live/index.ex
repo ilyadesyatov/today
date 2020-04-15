@@ -25,15 +25,15 @@ defmodule TodayWeb.PageLive.Index do
     {:noreply, socket |> update_selected(%{tag: prompt_tag}) |> assign_posts()}
   end
 
-  def handle_event("search", %{"user" => user} = params, socket) do
+  def handle_event("search", %{"user" => user}, socket) do
     {:noreply, socket |> update_selected(%{user: user}) |> assign_posts()}
   end
 
-  def handle_event("search", %{"date" => date} = params, socket) do
+  def handle_event("search", %{"date" => date}, socket) do
     {:noreply, socket |> update_selected(%{date: date}) |> assign_posts()}
   end
 
-  def handle_event("search", %{"tag" => tag} = params, socket) do
+  def handle_event("search", %{"tag" => tag}, socket) do
     {:noreply, socket |> update_selected(%{tag: tag}) |> assign_posts()}
   end
 

@@ -4,7 +4,6 @@ defmodule Today.Content do
   """
 
   import Ecto.Query, warn: false
-  import Ecto.Changeset
   alias Today.Repo
 
   alias Today.Content.{Post, Tag}
@@ -206,6 +205,16 @@ defmodule Today.Content do
   """
   def list_tags do
     Repo.all(Tag)
+  end
+
+  def custom_list_tags do
+    Repo.all(
+      from(t in Tag,
+        join: p in assoc(t, :posts),
+        group_by: t.id,
+        select: %{id: t.id, name: t.name, posts_count: count(p.id)}
+      )
+    )
   end
 
   @doc """

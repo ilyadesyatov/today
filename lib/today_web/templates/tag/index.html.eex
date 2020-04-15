@@ -6,17 +6,18 @@
             <%= for tag <- @tags do %>
               <li class="list-group-item">
                 <div class="row">
-                    <div class="col-lg-6 col-sm-12">
+                    <div class="col-lg-6">
                         <span>
                             <%= tag.name %>
                         </span>
                     </div>
-                    <div class="col-lg-6 col-sm-12">
+                    <div class="col-lg-6">
                         <div class="btn-group pull-right btn-group-sm" role="group">
-                           <%= link "Show", to: Routes.tag_path(@conn, :show, tag), class: "btn btn-primary" %>
-                           <%= link "Edit", to: Routes.tag_path(@conn, :edit, tag), class: "btn btn-warning" %>
-                           <%= link "Delete", to: Routes.tag_path(@conn, :delete, tag), class: "btn btn-danger", method: :delete, data: [confirm: "Are you sure?"] %>
+                           <%= link "Show", to: Routes.tag_path(@conn, :show, tag.id), class: "btn btn-primary" %>
+                           <%= link "Edit", to: Routes.tag_path(@conn, :edit, tag.id), class: "btn btn-warning" %>
+                           <%= link "Delete", to: Routes.tag_path(@conn, :delete, tag.id), class: "btn btn-danger", method: :delete, data: [confirm: "Are you sure?"] %>
                         </div>
+                        <div class="pull-right text-secondary mr-3"><span>Posts: <%= tag.posts_count %></span></div>
                     </div>
                 </div>
               </li>

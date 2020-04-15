@@ -4,7 +4,7 @@ defmodule TodayWeb.TagController do
   import Phoenix.LiveView.Controller
 
   def index(conn, _params) do
-    tags = Content.list_tags()
+    tags = Content.custom_list_tags()
     changeset = Content.change_tag(%Content.Tag{})
     render(conn, "index.html", tags: tags, changeset: changeset)
   end
