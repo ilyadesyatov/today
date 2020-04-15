@@ -14,7 +14,7 @@
 
       <%= form_for :select_tag, "#", [phx_change: :select, class: "mt-2"], fn f-> %>
           <div class="form-group">
-            <%= select(f, :tag, tags_for_select(), selected: @selected.tag, prompt: "Choose your tag", class: "form-control") %>
+            <%= select(f, :tag, tags_for_select(:name), selected: @selected.tag, prompt: "Choose your tag", class: "form-control") %>
           </div>
       <% end %>
     </div>

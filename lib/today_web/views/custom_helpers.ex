@@ -18,7 +18,11 @@ defmodule TodayWeb.CustomHelpers do
     |> Date.to_string()
   end
 
-  def tags_for_select(tags \\ Content.list_tags()) do
-    Enum.map(tags, &{String.replace(&1.name, "_", " "), &1.name})
+  def tags_for_select(type, tags \\ Content.list_tags()) do
+    case type do
+      :name -> Enum.map(tags, &{String.replace(&1.name, "_", " "), &1.name})
+      :id   -> Enum.map(tags, &{String.replace(&1.name, "_", " "), &1.id})
+    end
+
   end
 end
