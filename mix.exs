@@ -47,7 +47,7 @@ defmodule Today.MixProject do
       {:argon2_elixir, "~> 2.0"},
       {:earmark, "~> 1.4.3"},
       {:timex, "~> 3.6.1"},
-      {:phoenix_live_view, "~> 0.10.0"},
+      {:phoenix_live_view, "~> 0.11.0"},
       {:floki, ">= 0.0.0", only: :test}
     ]
   end
