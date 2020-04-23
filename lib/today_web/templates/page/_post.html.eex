@@ -1,5 +1,5 @@
 <div class="card mb-4">
-  <div class="card-body markdown-body">
+  <div class="card-body markdown-body" phx-hook="HighlightCode">
     <%= string_to_html(@post.body) %>
   </div>
   <div class="card-footer text-muted">
