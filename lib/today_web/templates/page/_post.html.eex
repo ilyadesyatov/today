@@ -1,6 +1,6 @@
 <div class="card mb-4">
-  <div class="card-body">
-    <p class="card-text"><%= string_to_html(@post.body) %></p>
+  <div class="card-body markdown-body">
+    <%= string_to_html(@post.body) %>
   </div>
   <div class="card-footer text-muted">
     <div class="row">
