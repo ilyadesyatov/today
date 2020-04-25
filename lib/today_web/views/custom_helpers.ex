@@ -21,8 +21,11 @@ defmodule TodayWeb.CustomHelpers do
   def tags_for_select(type, tags \\ Content.list_tags()) do
     case type do
       :name -> Enum.map(tags, &{String.replace(&1.name, "_", " "), &1.name})
-      :id   -> Enum.map(tags, &{String.replace(&1.name, "_", " "), &1.id})
+      :id -> Enum.map(tags, &{String.replace(&1.name, "_", " "), &1.id})
     end
-
   end
+
+  def posts_count(posts), do: Enum.count(posts)
+
+  def posts_count(posts, user_id), do: Enum.count(posts, fn post -> post.user_id == user_id end)
 end

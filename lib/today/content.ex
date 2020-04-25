@@ -207,15 +207,7 @@ defmodule Today.Content do
     Repo.all(Tag)
   end
 
-  def custom_list_tags do
-    Repo.all(
-      from(t in Tag,
-        join: p in assoc(t, :posts),
-        group_by: t.id,
-        select: %{id: t.id, name: t.name, posts_count: count(p.id)}
-      )
-    )
-  end
+  def custom_list_tags, do: Repo.all(Tag) |> Repo.preload([:posts])
 
   @doc """
   Gets a single tag.

@@ -17,7 +17,8 @@
                            <%= link "Edit", to: Routes.tag_path(@conn, :edit, tag.id), class: "btn btn-warning" %>
                            <%= link "Delete", to: Routes.tag_path(@conn, :delete, tag.id), class: "btn btn-danger", method: :delete, data: [confirm: "Are you sure?"] %>
                         </div>
-                        <div class="pull-right text-secondary mr-3"><span>Posts: <%= tag.posts_count %></span></div>
+                        <div class="pull-right text-success mr-3"><span>My posts: <%= posts_count(tag.posts, @current_user.id) %></span></div>
+                        <div class="pull-right text-secondary mr-3"><span>Posts: <%= posts_count(tag.posts) %></span></div>
                     </div>
                 </div>
               </li>

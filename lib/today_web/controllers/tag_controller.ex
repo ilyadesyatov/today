@@ -4,9 +4,10 @@ defmodule TodayWeb.TagController do
   import Phoenix.LiveView.Controller
 
   def index(conn, _params) do
+    user = Guardian.Plug.current_resource(conn)
     tags = Content.custom_list_tags()
     changeset = Content.change_tag(%Content.Tag{})
-    render(conn, "index.html", tags: tags, changeset: changeset)
+    render(conn, "index.html", tags: tags, changeset: changeset, current_user: user)
   end
 
   def new(conn, _params) do
