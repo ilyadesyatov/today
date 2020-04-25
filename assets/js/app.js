@@ -14,30 +14,33 @@ window.$ = $;
 //
 // Import dependencies
 //
-import "phoenix_html"
+import "phoenix_html";
 
-import {Socket} from "phoenix"
-import LiveSocket from "phoenix_live_view"
-import NProgress from "nprogress"
+import {Socket} from "phoenix";
+import LiveSocket from "phoenix_live_view";
+import NProgress from "nprogress";
 
 import hljs from 'highlight.js';
 hljs.initHighlightingOnLoad();
 
 let Hooks = {};
 
+function hljs_init() {
+    document.querySelectorAll('pre code').forEach((block) => {
+        hljs.highlightBlock(block);
+    });
+}
+
 Hooks.HighlightCode = {
-    mounted() {
-        document.querySelectorAll('pre code').forEach((block) => {
-            hljs.highlightBlock(block);
-        });
-    }
+    mounted() { hljs_init(); },
+    updated() { hljs_init(); }
 }
 
 let csrfToken = document.querySelector("meta[name='csrf-token']").getAttribute("content");
 let liveSocket = new LiveSocket("/live", Socket, {hooks: Hooks, params: {_csrf_token: csrfToken}});
 window.addEventListener('phx:page-loading-start', info => NProgress.start());
 window.addEventListener('phx:page-loading-stop', info => NProgress.done());
-liveSocket.connect()
+liveSocket.connect();
 window.liveSocket = liveSocket;
 
 // Import local files
