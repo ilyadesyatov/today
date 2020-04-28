@@ -33,6 +33,7 @@ defmodule TodayWeb.Router do
     resources "/tags", TagController
 
     live "/posts", PageLive.Index, :posts
+    live "/posts-auto-scroll", PageLive.IndexAutoScroll
   end
 
   scope "/", TodayWeb do

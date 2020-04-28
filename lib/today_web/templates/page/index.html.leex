@@ -19,8 +19,14 @@
       <% end %>
     </div>
     <div class="row">
-      <div class="col-md-12">
-        <%= render_many @posts, TodayWeb.PageView, "_post.html", as: :post, socket: @socket, current_user: @current_user %>
+      <div class="col-md-12"
+           phx-update="<%= @selected.action %>"
+           phx-hook="InfiniteScroll"
+           data-page="<%= @selected.page %>"
+           id="posts">
+                <%= for post <- @posts do %>
+                  <%= live_component @socket, TodayWeb.PageLive.Post, id: post.id, post: post, current_user: @current_user, selected: @selected %>
+                <% end %>
       </div>
     </div>
 </div>

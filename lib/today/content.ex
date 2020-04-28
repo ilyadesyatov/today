@@ -40,51 +40,9 @@ defmodule Today.Content do
           t.name in ^tags and u.username in ^users and
             fragment("?::date", p.inserted_at) >= ^start_at and
             fragment("?::date", p.inserted_at) <= ^end_at,
-        order_by: [desc: p.inserted_at],
-        preload: [:user, :tag]
-      )
-    )
-  end
-
-  def list_posts do
-    Repo.all(
-      from(p in Post,
-        join: t in "tags",
-        on: p.tag_id == t.id,
-        join: u in "users",
-        on: p.user_id == u.id,
-        order_by: [desc: p.inserted_at],
-        preload: [:user, :tag]
-      )
-    )
-  end
-
-  @doc """
-  Returns the list of posts.
-
-  ## Examples
-
-      iex> list_posts()
-      [%Post{}, ...]
-
-  """
-  def user_list_posts(user, params) do
-    tags =
-      (Map.has_key?(params, :tag) && [Map.get(params, :tag)]) ||
-        from(tag in Tag, select: tag.name) |> Repo.all()
-
-    start_at = Map.get(params, :date, "1800-01-01") |> Date.from_iso8601!()
-    end_at = Map.get(params, :date, "2200-01-01") |> Date.from_iso8601!()
-
-    Repo.all(
-      from(p in Post,
-        join: t in assoc(p, :tag),
-        on: p.tag_id == t.id,
-        where:
-          p.user_id == ^user.id and t.name in ^tags and
-            fragment("?::date", p.inserted_at) >= ^start_at and
-            fragment("?::date", p.inserted_at) <= ^end_at,
-        order_by: [desc: p.inserted_at],
+        order_by: [desc: p.inserted_at, desc: p.id],
+        offset: ^((params.page - 1) * params.per_page),
+        limit: ^params.limit,
         preload: [:user, :tag]
       )
     )
@@ -104,7 +62,7 @@ defmodule Today.Content do
       ** (Ecto.NoResultsError)
 
   """
-  def get_post!(id), do: Repo.get!(Post, id) |> Repo.preload([:user])
+  def get_post!(id), do: Repo.get!(Post, id) |> Repo.preload([:user, :tag])
 
   @doc """
   Creates a post.
