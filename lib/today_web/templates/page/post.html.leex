@@ -1,4 +1,4 @@
-<div class="card mb-4">
+<div class="card mb-4" id="<%= @myself %>">
   <div class="card-body markdown-body" phx-hook="HighlightCode">
     <%= string_to_html(@post.body) %>
   </div>
@@ -22,7 +22,9 @@
                    <%= link "Edit", to: Routes.post_path(@socket, :edit, @post), class: "btn btn-warning" %>
                    <%= link "Delete", to: "#",
                                phx_click: "delete",
-                               phx_value_id: @post.id,
+                               phx_value_id: @id,
+                               phx_value_per_page: @selected.per_page,
+                               phx_value_page: @selected.page,
                                class: "btn btn-danger",
                                data: [confirm: "Are you sure?"] %>
                 <% end %>
