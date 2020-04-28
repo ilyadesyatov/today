@@ -5,7 +5,7 @@ defmodule TodayWeb.Router do
   import Plug.BasicAuth
 
   pipeline :admins_only do
-    plug :basic_auth, username: "admin", password: System.get_env("LIVE_DASHBOARD_PASSWORD")
+    plug :basic_auth, username: "admin", password: Application.get_env(:today, :live_dashboard_password)
   end
 
   pipeline :browser do

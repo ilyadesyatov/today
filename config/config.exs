@@ -30,6 +30,9 @@ config :today, Today.UserManager.Guardian,
   issuer: "today",
   secret_key: "1Ev9uEisbb9UEyS5WPtG6DXE4Xd2QnRroq26LPx1FVHsLn6PQFNTTp5mkbkaG2EJ"
 
+# Custom environments
+config :today, live_dashboard_password: System.get_env("LIVE_DASHBOARD_PASSWORD")
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env()}.exs"
