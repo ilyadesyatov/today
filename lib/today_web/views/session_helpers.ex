@@ -14,6 +14,8 @@ defmodule TodayWeb.SessionHelpers do
     Guardian.Plug.authenticated?(conn)
   end
 
+  def live_current_user?(nil, user), do: false
+
   def live_current_user?(current_user, user) do
     current_user.id == user.id
   end
