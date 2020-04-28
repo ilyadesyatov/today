@@ -1,6 +1,12 @@
 defmodule TodayWeb.Router do
   use TodayWeb, :router
   import Phoenix.LiveView.Router
+  import Phoenix.LiveDashboard.Router
+  import Plug.BasicAuth
+
+  pipeline :admins_only do
+    plug :basic_auth, username: "admin", password: System.get_env("LIVE_DASHBOARD_PASSWORD")
+  end
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -34,6 +40,11 @@ defmodule TodayWeb.Router do
 
     live "/posts", PageLive.Index, :posts
     live "/posts-auto-scroll", PageLive.IndexAutoScroll
+  end
+
+  scope "/" do
+    pipe_through [:browser, :admins_only]
+    live_dashboard "/dashboard"
   end
 
   scope "/", TodayWeb do

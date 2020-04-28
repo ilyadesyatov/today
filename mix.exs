@@ -40,6 +40,7 @@ defmodule Today.MixProject do
       {:postgrex, ">= 0.0.0"},
       {:phoenix_html, "~> 2.11"},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
+      {:phoenix_live_dashboard, "~> 0.2"},
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
@@ -47,7 +48,7 @@ defmodule Today.MixProject do
       {:argon2_elixir, "~> 2.0"},
       {:earmark, "~> 1.4.3"},
       {:timex, "~> 3.6.1"},
-      {:phoenix_live_view, "~> 0.11.0"},
+      {:phoenix_live_view, "~> 0.12.0"},
       {:floki, ">= 0.0.0", only: :test}
     ]
   end
